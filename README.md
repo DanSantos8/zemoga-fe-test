@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -14,23 +12,75 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## UI
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[ ] Toggle view
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Buttons
 
-## Learn More
+- [ ] Vote now
+- [ ] Vote again
+- [ ] Thumbs up / down
 
-To learn more about Next.js, take a look at the following resources:
+People Card
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] Vote section
+- [ ] Name
+- [ ] Description
+- [ ] Gauge bar
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+People Card List
 
-## Deploy on Vercel
+- [ ] Vote section
+- [ ] Name
+- [ ] Description
+- [ ] Gauge bar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[ ] People List
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Features
+
+[ ] Get the data and map it into People List
+[ ] Implement toggle view
+[ ] Implement thumbs up and down actions + revalidate
+[ ] Implement Vote Now for confirming vote
+[ ] Implement Vote again to reset button section state
+[ ] Add some fancy transitions
+
+## Unit testing
+
+[ ] People list title renders
+[ ] Toggle view component renders
+[ ] Toggle view component has a value
+[ ] Toggle view component is clickable
+[ ] Toggle view component changes the value
+
+- People list
+- [ ] Renders
+- [ ] Renders all the cards
+
+- People Card
+- [ ] Renders
+- [ ] Render title and description
+- [ ] Render posted people days label
+- [ ] Render vote section
+- [ ] Render gauge bar
+- [ ] Renders the correct thumb up/down state based on the data
+
+- Vote section
+- [ ] Thumbs up / down is clickabel
+- [ ] Vote now is initially disabled
+- [ ] Vote now is enables after thumbs up / down is clicked
+- [ ] Vote again is clickable
+
+## E2E Testing
+
+[ ] People List - When toggle view is called / changes, the People List renders the right People Card component (List/Grid)
+[ ] Vote section - When a thumb button is clicked, the corresponding state is toggled, and the Vote Now button becomes enabled
+[ ] Vote section - When Vote Now is clicked, the vote is registered, the text updates, and the gauge bar changes
+[ ] Vote section - When Vote Again is clicked, the state of the buttons and text are reset, but the gauge bar remains updated
+
+## Acessibility
+
+[ ] All interactive components are accessible with keyboard navigation
+[ ] ARIA labels and roles are correctly used for assistive technologies
