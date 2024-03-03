@@ -1,4 +1,5 @@
 import Image from "next/image"
+import "../../global.css"
 
 function Navigation() {
   return (

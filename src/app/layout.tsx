@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
 import { Lato } from "next/font/google"
-import "./globals.css"
-import Navigation from "@/components/Navigation/Navigation"
-import Header from "@/components/Header/Header"
-import Template from "@/components/Template/Template"
+import Navigation from "@/lib/zemoga-ui/components/Navigation/Navigation"
+import Header from "@/lib/zemoga-ui/components/Header/Header"
+import Template from "@/lib/zemoga-ui/components/Template/Template"
 
 const lato = Lato({
   subsets: ["latin"],
