@@ -1,11 +1,18 @@
 import { cn } from "@/lib/utils"
 import Icon from "../Icon/Icon"
+import { Vote } from "@/models/people.models"
 
 type GaugeBarProps = {
   variant: "grid" | "list"
+  votes: Vote
 }
 
-const GaugeBar = ({ variant }: GaugeBarProps) => {
+const GaugeBar = ({ variant, votes }: GaugeBarProps) => {
+  const totalVotes = votes.negative + votes.positive
+
+  const positiveVotes = Math.round((votes.positive / totalVotes) * 100)
+  const negativeVotes = Math.round((votes.negative / totalVotes) * 100)
+
   const isList = variant === "list"
 
   const iconSize = isList ? 22.5 : 16
@@ -15,7 +22,10 @@ const GaugeBar = ({ variant }: GaugeBarProps) => {
         "lg:h-14": isList,
       })}
     >
-      <div className="relative flex h-full w-1/2 items-center px-3">
+      <div
+        className={cn("relative flex h-full items-center px-3")}
+        style={{ width: `${positiveVotes}%` }}
+      >
         <div className="absolute left-0 top-0 h-full w-full bg-green-positive opacity-60" />
 
         <div className="z-20 flex items-center gap-2">
@@ -25,11 +35,14 @@ const GaugeBar = ({ variant }: GaugeBarProps) => {
               "lg:text-[27px]": isList,
             })}
           >
-            50%
+            {positiveVotes}%
           </span>
         </div>
       </div>
-      <div className="relative flex h-full w-1/2 items-center justify-end px-3">
+      <div
+        className="relative flex h-full w-1/2 items-center justify-end px-3"
+        style={{ width: `${negativeVotes}%` }}
+      >
         <div className="absolute right-0 top-0 h-full w-full bg-yellow-negative opacity-60" />
         <div className="z-20 flex items-center gap-2">
           <span
@@ -37,7 +50,7 @@ const GaugeBar = ({ variant }: GaugeBarProps) => {
               "lg:text-[27px]": isList,
             })}
           >
-            50%
+            {negativeVotes}%
           </span>
           <Icon name="thumbsDown" size={iconSize} />
         </div>
