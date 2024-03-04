@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { Lato } from "next/font/google"
-import Navigation from "@/lib/zemoga-ui/components/Navigation/Navigation"
-import Header from "@/lib/zemoga-ui/components/Header/Header"
-import Template from "@/lib/zemoga-ui/components/Template/Template"
+import "./global.css"
 
 const lato = Lato({
   subsets: ["latin"],
@@ -21,11 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lato.className}>
-        <Navigation />
-        <Header />
-        <Template>{children}</Template>
-      </body>
+      <body className={lato.className}>{children}</body>
     </html>
   )
 }

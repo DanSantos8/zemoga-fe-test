@@ -20,25 +20,25 @@ Toggle view
 
 Buttons
 
-- [ ] Vote now
-- [ ] Vote again
-- [ ] Thumbs up / down
+- [x] Vote now
+- [x] Vote again
+- [x] Thumbs up / down
 
 People Card
 
-- [ ] Vote section
-- [ ] Name
-- [ ] Description
-- [ ] Gauge bar
+- [x] Vote section
+- [x] Name
+- [x] Description
+- [x] Gauge bar
 
 People Card List
 
-- [ ] Vote section
-- [ ] Name
-- [ ] Description
-- [ ] Gauge bar
+- [x] Vote section
+- [x] Name
+- [x] Description
+- [x] Gauge bar
 
-- [ ] People List
+- [x] People List
 
 ## Features
 
