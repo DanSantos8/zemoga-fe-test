@@ -8,8 +8,8 @@
       "picture": "kanye.png",
       "lastUpdated": "2020-03-10T23:08:57.892Z",
       "votes": {
-        "positive": 38,
-        "negative": 38
+        "positive": 0,
+        "negative": 1
       }
     },
     {
@@ -20,8 +20,8 @@
       "picture": "mark.png",
       "lastUpdated": "2021-02-14T23:10:19.134Z",
       "votes": {
-        "positive": 37,
-        "negative": 39
+        "positive": 0,
+        "negative": 1
       }
     },
     {
@@ -32,8 +32,8 @@
       "picture": "cristina.png",
       "lastUpdated": "2020-12-10T23:41:07.120Z",
       "votes": {
-        "positive": 17,
-        "negative": 8
+        "positive": 1,
+        "negative": 0
       }
     },
     {
@@ -44,8 +44,8 @@
       "picture": "malala.png",
       "lastUpdated": "2020-12-10T23:41:07.120Z",
       "votes": {
-        "positive": 11,
-        "negative": 13
+        "positive": 1,
+        "negative": 0
       }
     },
     {
@@ -56,8 +56,8 @@
       "picture": "elon.png",
       "lastUpdated": "2020-12-20T23:43:38.041Z",
       "votes": {
-        "positive": 9,
-        "negative": 12
+        "positive": 0,
+        "negative": 1
       }
     },
     {
@@ -68,8 +68,8 @@
       "picture": "greta.png",
       "lastUpdated": "2021-02-26T23:44:50.326Z",
       "votes": {
-        "positive": 16,
-        "negative": 5
+        "positive": 1,
+        "negative": 0
       }
     }
   ]

@@ -15,7 +15,7 @@ function debounce(
   }
 }
 
-export default function useWindowSizeWithDebounce(debounceTime = 500) {
+export default function useWindowSizeWithDebounce(debounceTime = 100) {
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,

@@ -3,7 +3,6 @@
 Run json-server and development server:
 
 ```bash
-pnpm run json-server
 pnpm run dev
 ```
 

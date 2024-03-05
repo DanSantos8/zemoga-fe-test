@@ -1,4 +1,3 @@
-import PeopleList from "@/components/PeopleList/PeopleList"
 import { PeopleModelRequest } from "@/models/people.models"
 import { getPeople } from "@/server/requests/fetchPeople"
 import dynamic from "next/dynamic"
