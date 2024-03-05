@@ -1,91 +1,90 @@
 ## Getting Started
 
-First, run the development server:
+Run json-server and development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm run json-server
+pnpm run dev
 ```
+
+You can check the tests coverage by running:
+
+```bash
+pnpm run test --coverage
+```
+
+## Possible improvements
+
+- Add a toast to show when an operation/interaction fails
+  - Currently, if the server is not running or it fails, we can trigger the action to update the vote and to continue the flow - Thanks for your vote appears. That's my bad. I should've priotized it.
+- Reaching 100% of coverage testing
+  - ![alt text](image.png)
+- Add e2e testings
 
 ## UI
 
 Toggle view
 
-- [ ] Dropdown
+- [x] Dropdown
 
 Buttons
 
-- [ ] Vote now
-- [ ] Vote again
-- [ ] Thumbs up / down
+- [x] Vote now
+- [x] Vote again
+- [x] Thumbs up / down
 
 People Card
 
-- [ ] Vote section
-- [ ] Name
-- [ ] Description
-- [ ] Gauge bar
+- [x] Vote section
+- [x] Name
+- [x] Description
+- [x] Gauge bar
 
 People Card List
 
-- [ ] Vote section
-- [ ] Name
-- [ ] Description
-- [ ] Gauge bar
+- [x] Vote section
+- [x] Name
+- [x] Description
+- [x] Gauge bar
 
-- [ ] People List
+- [x] People List
 
 ## Features
 
-- [ ] Get the data and map it into People List
-- [ ] Implement toggle view
-- [ ] Implement thumbs up and down actions + revalidate
-- [ ] Implement Vote Now for confirming vote
-- [ ] Implement Vote again to reset button section state
-- [ ] Add some fancy transitions
+- [x] Get the data and map it into People List
+- [x] Implement toggle view
+- [x] Map people list for different visualizations/list view type
+- [x] Map people list as Grid view for mobile devices - out at 768px
+- [x] Implement thumbs up and down actions + revalidate
+- [x] Implement Vote Now for confirming vote
+- [x] Implement Vote again to reset button to default state
 
 ## Unit testing
 
-- [ ] People list title renders
-- [ ] Toggle view component renders
-- [ ] Toggle view component has a value
-- [ ] Toggle view component is clickable
-- [ ] Toggle view component changes the value
+- [x] People list title renders
+- [x] Toggle view component renders
+- [x] Toggle view component has a value
+- [x] Toggle view component is clickable
+- [x] Toggle view component changes the value
 
 People list
 
-- [ ] Renders
-- [ ] Renders all the cards
+- [x] Renders
+- [x] Renders all the cards
 
 People Card
 
-- [ ] Renders
-- [ ] Render title and description
-- [ ] Render posted people days label
-- [ ] Render vote section
-- [ ] Render gauge bar
-- [ ] Renders the correct thumb up/down state based on the data
+- [x] Renders
+- [x] Render title and description
+- [x] Render posted people days label
+- [x] Render vote section
+- [x] Render gauge bar
+- [x] Renders the correct thumb up/down state based on the data
 
-Vote section
+Voting
 
-- [ ] Thumbs up / down is clickabel
-- [ ] Vote now is initially disabled
-- [ ] Vote now is enables after thumbs up / down is clicked
-- [ ] Vote again is clickable
-
-## E2E Testing
-
-- [ ] People List - When toggle view is called / changes, the People List renders the right People Card component (List/Grid)
-- [ ] Vote section - When a thumb button is clicked, the corresponding state is toggled, and the Vote Now button becomes enabled
-- [ ] Vote section - When Vote Now is clicked, the vote is registered, the text updates, and the gauge bar changes
-- [ ] Vote section - When Vote Again is clicked, the state of the buttons and text are reset, but the gauge bar remains updated
-
-## Acessibility
-
-- [ ] All interactive components are accessible with keyboard navigation
-- [ ] ARIA labels and roles are correctly used for assistive technologies
+- [x] Thumbs up / down is clickable
+- [x] Vote now is initially disabled
+- [x] Vote now is enables after thumbs up / down is clicked
+- [x] Vote again is clickable
+- [x] Vote again resets to default state when clicked

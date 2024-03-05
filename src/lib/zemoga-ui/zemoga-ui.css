@@ -13,12 +13,10 @@
 
 html,
 body {
-  width: 100%;
+  font-size: 12px;
   margin: 0;
   background-color: var(--color-white);
   font-family: "Lato", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
 }
 
 body {
@@ -48,10 +46,10 @@ hr[role="separator"] {
 
 .nav {
   position: fixed;
-  z-index: 2;
+  z-index: 9999;
   top: 0;
   display: flex;
-  width: calc(100vw - 2rem);
+  width: calc(100vw);
   min-height: 10rem;
   justify-content: space-between;
   padding: 0 1rem;
@@ -112,7 +110,7 @@ hr[role="separator"] {
   left: 0;
   display: flex;
   width: 100vw;
-  height: calc(100vh - 4rem);
+  height: calc(100vh);
   flex-direction: column;
   padding: 4rem 0 2rem;
   background-color: var(--color-darker-background);
@@ -174,9 +172,9 @@ hr[role="separator"] {
 
 .hero__background {
   position: absolute;
-  left: -35vw;
-  width: 160vw;
+  width: 100vw;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -204,12 +202,13 @@ hr[role="separator"] {
   left: -20%;
   width: 140%;
   height: 140%;
-  background: center no-repeat
+  background:
+    center no-repeat
       linear-gradient(
         var(--color-dark-background),
         var(--color-dark-background)
       ),
-    -25vw 0/160vw no-repeat url("../assets/img/pope-francis.png");
+    -25vw 0/160vw no-repeat url(/_next/static/media/pope-francis.9be2bc08.png);
   filter: blur(1rem);
 }
 
@@ -223,13 +222,14 @@ hr[role="separator"] {
   margin: 0;
   font-weight: 300;
   white-space: nowrap;
+  //line-height: 2;
 }
 
 .featured-card__title {
   margin: 0;
   font-size: 3rem;
   font-weight: 400;
-  line-height: 1;
+  line-height: 3rem;
 }
 
 .featured-card__desc {
@@ -240,12 +240,14 @@ hr[role="separator"] {
   -webkit-box-orient: vertical;
   font-size: 1.25rem;
   font-weight: 300;
+  line-height: 1.5rem;
   -webkit-line-clamp: 6;
   text-overflow: ellipsis;
 }
 
 .featured-card__cta {
   font-weight: 700;
+  margin: 1rem 0;
 }
 
 .featured-card__buttons {
@@ -257,6 +259,8 @@ hr[role="separator"] {
 .featured-card__buttons > .icon-button {
   width: 50%;
   height: 2.75rem;
+  display: flex;
+  justify-content: center;
 }
 
 .featured-card__buttons > .icon-button > img {
@@ -323,14 +327,16 @@ hr[role="separator"] {
   top: 0;
   left: 0;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   opacity: 0.2;
   pointer-events: none;
 }
 
 .banner-top .banner__left {
-  flex-basis: 40%;
+  flex-basis: 42%;
   padding-right: 1rem;
+  line-height: 1.2;
 }
 
 .banner-top .banner__left > .banner__hairline {
@@ -358,6 +364,7 @@ hr[role="separator"] {
   font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: -0.05rem;
+  line-height: 1.2;
 }
 
 .banner-bottom {
@@ -448,6 +455,12 @@ main h2 {
   display: none;
 }
 
+.featured-card__more-info a {
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+}
+
 .featured-card__more-info-icon {
   width: 1.5rem;
   height: 1rem;
@@ -486,20 +499,21 @@ main h2 {
     top: -6.5rem;
     left: 0;
     width: 110vw;
-    height: auto;
+    height: -webkit-fill-available;
   }
 
   .featured-card__glass-background {
-    background: center no-repeat
+    background:
+      center no-repeat
         linear-gradient(
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      7vw -6.5rem/115vw auto no-repeat url(../assets/img/pope-francis.png);
+      7vw -6.5rem/115vw auto no-repeat url(/_next/static/media/pope-francis.9be2bc08.png);
   }
 
   .featured-card__content {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 0;
   }
 
   .featured-card__more-info {
@@ -509,11 +523,16 @@ main h2 {
   }
 
   .featured-card__buttons {
-    margin: 0 -1.5rem -2rem;
+    margin: 1rem -1.5rem 0;
+  }
+
+  .featured-card__title {
+    line-height: 2.5rem;
   }
 
   .banner-top .banner__left {
-    flex-basis: 20%;
+    flex-basis: 22%;
+    line-height: 1;
   }
 
   .banner-top .banner__right {
@@ -626,6 +645,7 @@ main h2 {
   }
 
   .nav__links li {
+    width: -moz-fit-content;
     width: fit-content;
     margin: 0 1rem 0 0;
     font-size: 1rem;
@@ -666,12 +686,13 @@ main h2 {
   }
 
   .featured-card__glass-background {
-    background: center no-repeat
+    background:
+      center no-repeat
         linear-gradient(
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(../assets/img/pope-francis.png);
+      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(/_next/static/media/pope-francis.9be2bc08.png);
   }
 
   .featured-card__content {
