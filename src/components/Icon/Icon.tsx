@@ -13,7 +13,11 @@ interface IconProps {
 
 const Icon: React.FC<IconProps> = ({ name, className = "" }) => {
   const Component = icons[name]
-  return Component ? <Component className={className} /> : null
+  return Component ? (
+    <div data-testid={name}>
+      <Component className={className} />
+    </div>
+  ) : null
 }
 
 export default Icon

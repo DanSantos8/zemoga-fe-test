@@ -31,6 +31,7 @@ const Button: React.FC<ButtonProps> = ({
             "bg-light-gray-background": disabled,
           }
         )}
+        aria-disabled={disabled}
       />
     ),
     [disabled]
@@ -43,7 +44,9 @@ const Button: React.FC<ButtonProps> = ({
       )}
       onClick={onClick}
       disabled={disabled}
+      name={variant}
       {...rest}
+      data-testid={`button-${variant}`}
     >
       {variant === "primary" && renderOverlay()}
       {children && children}

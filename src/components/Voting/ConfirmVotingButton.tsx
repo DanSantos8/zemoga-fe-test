@@ -1,7 +1,12 @@
 import { postVote } from "@/server/actions/vote"
 import Button from "../Button/Button"
 
-const ConfirmVotingButton = (props: any) => {
+const ConfirmVotingButton = (props: {
+  voteIntention: "positive" | "negative" | null
+  id: number
+  isVoted: boolean
+  handleIsVoted: () => void
+}) => {
   const { voteIntention, id, isVoted, handleIsVoted } = props
 
   if (isVoted) {
@@ -10,6 +15,7 @@ const ConfirmVotingButton = (props: any) => {
         label="Vote Again"
         className="h-full min-w-[107px] text-xl sm:text-base lg:text-xs"
         onClick={handleIsVoted}
+        aria-label="vote-again"
       />
     )
   }
@@ -23,6 +29,7 @@ const ConfirmVotingButton = (props: any) => {
         handleIsVoted()
       }}
       disabled={!voteIntention}
+      aria-label="vote-now"
     />
   )
 }

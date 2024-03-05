@@ -37,8 +37,15 @@ const Voting: React.FC<VotingProps> = ({
   }, [category, isVoted, lastUpdated])
 
   return (
-    <div className="z-10 flex flex-col items-end gap-4">
-      <p className="text-base font-bold text-white lg:text-xs">
+    <div
+      className="z-10 flex flex-col items-end gap-4"
+      data-testid="voting"
+      aria-live="polite"
+    >
+      <p
+        className="text-base font-bold text-white lg:text-xs"
+        aria-live="polite"
+      >
         {renderMessage()}
       </p>
       <div className="flex items-center gap-3">
@@ -51,6 +58,7 @@ const Voting: React.FC<VotingProps> = ({
                 "border-[1px] border-white": voteIntention === "positive",
               })}
               onClick={handleVoteIntention("positive")}
+              aria-label="positive-vote"
             >
               <Icon
                 name="thumbsUp"
@@ -66,6 +74,7 @@ const Voting: React.FC<VotingProps> = ({
                 "border-[1px] border-white": voteIntention === "negative",
               })}
               onClick={handleVoteIntention("negative")}
+              aria-label="negative-vote"
             >
               <Icon
                 name="thumbsDown"

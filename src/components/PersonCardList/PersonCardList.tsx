@@ -5,7 +5,7 @@ import { Person } from "@/models/people.models"
 import Icon, { icons } from "../Icon/Icon"
 import { cn } from "@/lib/utils"
 
-const PeopleCardList: React.FC<Person> = ({
+const PersonCardList: React.FC<Person> = ({
   id,
   category,
   description,
@@ -39,8 +39,12 @@ const PeopleCardList: React.FC<Person> = ({
 
   return (
     <div
-      className="relative flex min-h-[170px] w-full flex-col justify-between gap-3 bg-contain bg-no-repeat"
-      style={{ backgroundImage: `url(/assets/img/${picture})` }}
+      className="relative flex min-h-[170px] w-full flex-col justify-between gap-3 bg-no-repeat"
+      style={{
+        backgroundImage: `url(/assets/img/${picture})`,
+        backgroundSize: "19rem auto",
+        backgroundPosition: "-6% 40%",
+      }}
     >
       {isPositive && renderIcon("thumbsUp", "bg-green-positive")}
       {!isPositive && renderIcon("thumbsDown", "bg-yellow-negative")}
@@ -49,10 +53,10 @@ const PeopleCardList: React.FC<Person> = ({
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, transparent 6%, rgba(136, 136, 136, 1) 22%, rgba(102, 102, 102, 1) 30%, rgba(51, 51, 51, 0.6) 100%)",
+              "linear-gradient(to right, transparent 6%, rgba(136, 136, 136, 1) 26%, rgba(102, 102, 102, 1) 40%, rgba(51, 51, 51, 0.6) 100%)",
           }}
         />
-        <div className="flex w-[80%] justify-between gap-9 self-end">
+        <div className="flex w-[75%] justify-between gap-9 self-end">
           <div className="z-10 flex w-2/3 flex-col md:gap-6 lg:gap-2">
             <p className="line-clamp-2 max-h-[74px] overflow-ellipsis text-[2rem] font-normal text-white">
               {name}
@@ -74,4 +78,4 @@ const PeopleCardList: React.FC<Person> = ({
   )
 }
 
-export default PeopleCardList
+export default PersonCardList

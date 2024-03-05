@@ -19,7 +19,7 @@ const GaugeBar = ({ votes, variant }: GaugeBarProps) => {
   }
 
   return (
-    <div className={`z-20 flex w-full ${classes[variant]}`}>
+    <div className={`z-20 flex w-full ${classes[variant]}`} role="presentation">
       {!!positiveVotes && (
         <div
           className="relative flex h-full items-center px-3"
@@ -38,6 +38,7 @@ const GaugeBar = ({ votes, variant }: GaugeBarProps) => {
               className={cn("text-2xl text-white", {
                 "text-[18px]": variant === "grid",
               })}
+              aria-label="positive-votes"
             >
               {positiveVotes}%
             </span>
@@ -55,6 +56,7 @@ const GaugeBar = ({ votes, variant }: GaugeBarProps) => {
               className={cn("text-2xl text-white", {
                 "text-[18px]": variant === "grid",
               })}
+              aria-label="negative-votes"
             >
               {negativeVotes}%
             </span>

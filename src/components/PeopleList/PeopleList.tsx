@@ -1,16 +1,20 @@
 "use client"
-import PeopleCard from "../PeopleCard/PeopleCard"
-import PeopleCardList from "../PeopleCardList/PeopleCardList"
+import PersonCard from "../PersonCard/PersonCard"
 import { cn } from "@/lib/utils"
 import ToggleView from "../ToggleView/ToggleView"
 import useLocalStorage from "@/hooks/useLocalStorage"
 import { PeopleModelRequest } from "@/models/people.models"
+import useWindowSizeWithDebounce from "@/hooks/useWindowSize"
+import PersonCardList from "../PersonCardList/PersonCardList"
 
 const PeopleList = ({ data }: { data: PeopleModelRequest }) => {
   const [value, setValue] = useLocalStorage("listViewType", "grid")
+  const { width } = useWindowSizeWithDebounce()
+
+  const isMobile = width < 768
   const isList = value === "list"
 
-  const PeopleCardComponent = isList ? PeopleCardList : PeopleCard
+  const PersonCardComponent = isList ? PersonCardList : PersonCard
 
   const setViewType = (view: string) => {
     setValue(view)
@@ -19,31 +23,35 @@ const PeopleList = ({ data }: { data: PeopleModelRequest }) => {
   return (
     <>
       <div className="flex w-full items-end justify-between">
-        <h1 className="text-[2.5rem] font-light">Previous Rulings</h1>
-        <div className="hidden md:block">
-          <ToggleView setViewType={setViewType} value={value} />
-        </div>
+        <h1 className="text-[2.5rem] font-light" aria-label="Previous Rulings">
+          Previous Rulings
+        </h1>
+        <ToggleView setViewType={setViewType} value={value} />
       </div>
-      <div className="hidden md:block">
+      {!isMobile && (
         <div
           className={cn("", {
             "grid grid-cols-2 gap-7 lg:grid-cols-3": !isList,
             "flex flex-col gap-4": isList,
           })}
+          aria-label="peope-list"
         >
           {data.map((person, key) => {
-            return <PeopleCardComponent key={key} {...person} />
+            return <PersonCardComponent key={key} {...person} />
           })}
         </div>
-      </div>
+      )}
 
-      <div className="md:hidden">
-        <div className="flex w-full min-w-full flex-nowrap gap-3 overflow-x-auto">
+      {isMobile && (
+        <div
+          className="flex w-full min-w-full flex-nowrap gap-3 overflow-x-auto"
+          aria-label="peope-list"
+        >
           {data.map((person, key) => {
-            return <PeopleCard key={key} {...person} />
+            return <PersonCard key={key} {...person} />
           })}
         </div>
-      </div>
+      )}
     </>
   )
 }
