@@ -13,6 +13,14 @@ You can check the tests coverage by running:
 pnpm run test --coverage
 ```
 
+## Possible improvements
+
+- Add a toast to show when an operation/interaction fails
+  - Currently, if the server is not running or it fails, we can trigger the action to update the vote and to continue the flow - Thanks for your vote appears. That's my bad. I should've priotized it.
+- Reaching 100% of coverage testing
+  - ![alt text](image.png)
+- Add e2e testings
+
 ## UI
 
 Toggle view
