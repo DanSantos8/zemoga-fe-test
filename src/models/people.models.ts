@@ -6,6 +6,7 @@ export type Vote = {
 export type Category = "entertainment" | "business" | "politics" | "environment"
 
 export type Person = {
+  id: number
   name: string
   description: string
   category: Category

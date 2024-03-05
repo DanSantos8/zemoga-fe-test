@@ -1,5 +1,3 @@
-"use client"
-import useLocalStorage from "@/hooks/useLocalStorage"
 import { useState } from "react"
 
 type ToggleView = {
@@ -23,24 +21,21 @@ const ToggleView = ({ value, setViewType }: ToggleView) => {
   }
 
   return (
-    <div
-      className="relative flex w-[9.6rem] flex-col"
-      onClick={(e) => e.stopPropagation()}
-    >
+    <div className="relative z-30 flex w-[9.6rem] flex-col bg-white">
       <button
-        className="flex h-9 items-center justify-center border-2 border-black"
+        className="flex h-9 items-center justify-center border-2 border-black text-xs"
         onClick={handleVisibility}
       >
         {views[value as keyof typeof views]}
       </button>
       {isOpen && (
-        <ul className="flex flex-col divide-y-2 divide-black border-2 border-t-0 border-black">
-          <li className="flex h-9 items-center justify-center">
+        <ul className="absolute left-0 top-9 flex w-full flex-col divide-y-2 divide-black border-2 border-t-0 border-black bg-white">
+          <li className="flex h-9 items-center justify-center text-xs">
             <button onClick={() => handleViewType("list")} className="w-full">
               List
             </button>
           </li>
-          <li className="flex h-9 items-center justify-center">
+          <li className="flex h-9 items-center justify-center text-xs">
             <button onClick={() => handleViewType("grid")} className="w-full">
               Grid
             </button>

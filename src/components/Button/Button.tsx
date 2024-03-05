@@ -42,6 +42,7 @@ const Button: React.FC<ButtonProps> = ({
         className
       )}
       onClick={onClick}
+      disabled={disabled}
       {...rest}
     >
       {variant === "primary" && renderOverlay()}

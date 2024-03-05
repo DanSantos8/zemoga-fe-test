@@ -46,7 +46,7 @@ hr[role="separator"] {
 
 .nav {
   position: fixed;
-  z-index: 2;
+  z-index: 9999;
   top: 0;
   display: flex;
   width: calc(100vw);
@@ -172,7 +172,7 @@ hr[role="separator"] {
 
 .hero__background {
   position: absolute;
-  width: 160vw;
+  width: 100vw;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
@@ -334,8 +334,9 @@ hr[role="separator"] {
 }
 
 .banner-top .banner__left {
-  flex-basis: 40%;
+  flex-basis: 42%;
   padding-right: 1rem;
+  line-height: 1.2;
 }
 
 .banner-top .banner__left > .banner__hairline {
@@ -363,6 +364,7 @@ hr[role="separator"] {
   font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: -0.05rem;
+  line-height: 1.2;
 }
 
 .banner-bottom {
@@ -529,7 +531,8 @@ main h2 {
   }
 
   .banner-top .banner__left {
-    flex-basis: 20%;
+    flex-basis: 22%;
+    line-height: 1;
   }
 
   .banner-top .banner__right {

@@ -2,8 +2,11 @@ import React from "react"
 import GaugeBar from "../GaugeBar/GaugeBar"
 import Voting from "../Voting/Voting"
 import { Person } from "@/models/people.models"
+import Icon, { icons } from "../Icon/Icon"
+import { cn } from "@/lib/utils"
 
 const PeopleCardList: React.FC<Person> = ({
+  id,
   category,
   description,
   lastUpdated,
@@ -11,13 +14,36 @@ const PeopleCardList: React.FC<Person> = ({
   picture,
   votes,
 }) => {
+  const isPositive = votes.positive > votes.negative
+  const isEqual = votes.positive === votes.negative
+
+  const renderIcon = (iconName: keyof typeof icons, bgColor: string) => {
+    if (isEqual) {
+      return null
+    }
+
+    return (
+      <div
+        className={cn(
+          "absolute left-0 top-0 flex h-[30px] w-[30px] lg:h-[45px] lg:w-[45px] items-center justify-center",
+          bgColor
+        )}
+      >
+        <Icon
+          name={iconName}
+          className="h-[15px] w-[15px] lg:h-[24px] lg:w-[24px]"
+        />
+      </div>
+    )
+  }
+
   return (
     <div
       className="relative flex min-h-[170px] w-full flex-col justify-between gap-3 bg-contain bg-no-repeat"
-      style={{
-        backgroundImage: `url(/assets/img/${picture})`,
-      }}
+      style={{ backgroundImage: `url(/assets/img/${picture})` }}
     >
+      {isPositive && renderIcon("thumbsUp", "bg-green-positive")}
+      {!isPositive && renderIcon("thumbsDown", "bg-yellow-negative")}
       <div className="flex w-full flex-col gap-3 px-3 pt-2">
         <div
           className="absolute inset-0"
@@ -26,9 +52,8 @@ const PeopleCardList: React.FC<Person> = ({
               "linear-gradient(to right, transparent 6%, rgba(136, 136, 136, 1) 22%, rgba(102, 102, 102, 1) 30%, rgba(51, 51, 51, 0.6) 100%)",
           }}
         />
-
         <div className="flex w-[80%] justify-between gap-9 self-end">
-          <div className="z-10 flex flex-col md:gap-6 lg:gap-2">
+          <div className="z-10 flex w-2/3 flex-col md:gap-6 lg:gap-2">
             <p className="line-clamp-2 max-h-[74px] overflow-ellipsis text-[2rem] font-normal text-white">
               {name}
             </p>
@@ -40,10 +65,11 @@ const PeopleCardList: React.FC<Person> = ({
             variant="list"
             category={category}
             lastUpdated={lastUpdated}
+            id={id}
           />
         </div>
       </div>
-      <GaugeBar votes={votes} />
+      <GaugeBar votes={votes} variant="list" />
     </div>
   )
 }

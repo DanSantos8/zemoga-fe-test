@@ -18,8 +18,8 @@ const PeopleList = ({ data }: { data: PeopleModelRequest }) => {
 
   return (
     <>
-      <div className="flex w-full justify-between">
-        <h1 className="text-5xl font-light">Previous Rulings</h1>
+      <div className="flex w-full items-end justify-between">
+        <h1 className="text-[2.5rem] font-light">Previous Rulings</h1>
         <div className="hidden md:block">
           <ToggleView setViewType={setViewType} value={value} />
         </div>

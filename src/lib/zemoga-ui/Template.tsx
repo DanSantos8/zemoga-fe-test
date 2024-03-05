@@ -49,7 +49,6 @@ const Template: React.FC<{ children: ReactNode }> = ({ children }) => {
           alt="Pope Francis"
           width={1440}
           height={700}
-          objectPosition="top"
         />
         <div className="max-centered">
           <div className="hero__featured-card">
