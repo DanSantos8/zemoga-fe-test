@@ -1,5 +1,11 @@
 ## Getting Started
 
+Install dependencies
+
+```bash
+pnpm i
+```
+
 Run json-server and development server:
 
 ```bash
