@@ -8,8 +8,8 @@
       "picture": "kanye.png",
       "lastUpdated": "2020-03-10T23:08:57.892Z",
       "votes": {
-        "positive": 38,
-        "negative": 38
+        "positive": 44,
+        "negative": 48
       }
     },
     {
@@ -21,7 +21,7 @@
       "lastUpdated": "2021-02-14T23:10:19.134Z",
       "votes": {
         "positive": 37,
-        "negative": 39
+        "negative": 43
       }
     },
     {
@@ -32,8 +32,8 @@
       "picture": "cristina.png",
       "lastUpdated": "2020-12-10T23:41:07.120Z",
       "votes": {
-        "positive": 17,
-        "negative": 8
+        "positive": 19,
+        "negative": 11
       }
     },
     {
@@ -56,7 +56,7 @@
       "picture": "elon.png",
       "lastUpdated": "2020-12-20T23:43:38.041Z",
       "votes": {
-        "positive": 16,
+        "positive": 18,
         "negative": 13
       }
     },
@@ -69,7 +69,7 @@
       "lastUpdated": "2021-02-26T23:44:50.326Z",
       "votes": {
         "positive": 16,
-        "negative": 5
+        "negative": 6
       }
     }
   ]

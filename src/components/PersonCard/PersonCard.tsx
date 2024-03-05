@@ -47,7 +47,7 @@ const PersonCard: React.FC<Person> = ({
           {isPositive && renderIcon("thumbsUp", "bg-green-positive")}
           {!isPositive && renderIcon("thumbsDown", "bg-yellow-negative")}
           <p
-            className="line-clamp-2 max-h-[6.5rem] overflow-ellipsis text-4xl font-normal text-white md:max-h-[4.5rem] md:text-4xl lg:text-3xl"
+            className="line-clamp-2 max-h-[6.5rem] overflow-ellipsis text-4xl font-normal text-white md:max-h-[5rem] md:text-4xl lg:text-3xl"
             aria-label="person name"
           >
             {name}
