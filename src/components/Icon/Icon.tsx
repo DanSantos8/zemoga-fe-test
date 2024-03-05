@@ -8,12 +8,12 @@ export const icons = {
 
 interface IconProps {
   name: keyof typeof icons
-  size?: number
+  className?: string
 }
 
-const Icon: React.FC<IconProps> = ({ name, size = 16 }) => {
+const Icon: React.FC<IconProps> = ({ name, className = "" }) => {
   const Component = icons[name]
-  return Component ? <Component size={size} /> : null
+  return Component ? <Component className={className} /> : null
 }
 
 export default Icon

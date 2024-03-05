@@ -1,16 +1,15 @@
 type IconProps = {
-  size: number
+  className: string
 }
 
 export const ThumbsUpIcon = (props: IconProps) => {
-  const { size } = props
+  const { className } = props
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
       fill="none"
       viewBox="0 0 16 16"
+      className={className}
     >
       <path
         fill="#fff"
@@ -23,12 +22,11 @@ export const ThumbsUpIcon = (props: IconProps) => {
 }
 
 export const ThumbsDownIcon = (props: IconProps) => {
-  const { size } = props
+  const { className } = props
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
+      className={className}
       viewBox="0 0 16 16"
     >
       <path

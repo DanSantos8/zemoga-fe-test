@@ -110,7 +110,7 @@ hr[role="separator"] {
   left: 0;
   display: flex;
   width: 100vw;
-  height: calc(100vh - 4rem);
+  height: calc(100vh);
   flex-direction: column;
   padding: 4rem 0 2rem;
   background-color: var(--color-darker-background);

@@ -14,7 +14,9 @@ const PeopleCardList: React.FC<Person> = ({
   return (
     <div
       className="relative flex min-h-[170px] w-full flex-col justify-between gap-3 bg-contain bg-no-repeat"
-      style={{ backgroundImage: `url(/assets/img/${picture})` }}
+      style={{
+        backgroundImage: `url(/assets/img/${picture})`,
+      }}
     >
       <div className="flex w-full flex-col gap-3 px-3 pt-2">
         <div
@@ -26,8 +28,8 @@ const PeopleCardList: React.FC<Person> = ({
         />
 
         <div className="flex w-[80%] justify-between gap-9 self-end">
-          <div className="z-10 flex flex-col gap-2">
-            <p className="line-clamp-2 max-h-[74px] overflow-ellipsis text-4xl font-normal text-white">
+          <div className="z-10 flex flex-col md:gap-6 lg:gap-2">
+            <p className="line-clamp-2 max-h-[74px] overflow-ellipsis text-[2rem] font-normal text-white">
               {name}
             </p>
             <p className="line-clamp-2 max-h-12 overflow-ellipsis text-base text-white">
@@ -41,7 +43,7 @@ const PeopleCardList: React.FC<Person> = ({
           />
         </div>
       </div>
-      <GaugeBar variant="list" votes={votes} />
+      <GaugeBar votes={votes} />
     </div>
   )
 }

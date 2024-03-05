@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils"
-import React, { ReactNode, useCallback, useMemo } from "react"
+import React, { ReactNode, useCallback } from "react"
 
 const variants = {
-  primary: "px-5 py-1 border-white border-[1px]",
+  primary: "px-5 py-2 border-white border-[1px]",
   ["vote-up"]: "bg-green-positive",
   ["vote-down"]: "bg-yellow-negative",
 }

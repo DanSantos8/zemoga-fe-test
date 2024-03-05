@@ -20,7 +20,9 @@ const PeopleList = ({ data }: { data: PeopleModelRequest }) => {
     <>
       <div className="flex w-full justify-between">
         <h1 className="text-5xl font-light">Previous Rulings</h1>
-        <ToggleView setViewType={setViewType} value={value} />
+        <div className="hidden md:block">
+          <ToggleView setViewType={setViewType} value={value} />
+        </div>
       </div>
       <div className="hidden md:block">
         <div

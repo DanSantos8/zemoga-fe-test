@@ -24,7 +24,7 @@ const ToggleView = ({ value, setViewType }: ToggleView) => {
 
   return (
     <div
-      className="relative flex w-44 flex-col"
+      className="relative flex w-[9.6rem] flex-col"
       onClick={(e) => e.stopPropagation()}
     >
       <button
