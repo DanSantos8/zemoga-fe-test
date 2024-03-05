@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"pnpm run dev\" \"pnpm run json-server\"",
+    "dev": "concurrently \"pnpm run dev:ui\" \"pnpm run json-server\"",
     "dev:ui": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server": "json-server --watch src/db.json --port 5555",
+    "json-server": "json-server --watch src/db.json --port 5000",
     "test": "jest",
     "test:watch": "jest --watch"
   },

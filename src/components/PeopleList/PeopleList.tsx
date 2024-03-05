@@ -6,6 +6,7 @@ import useLocalStorage from "@/hooks/useLocalStorage"
 import { PeopleModelRequest } from "@/models/people.models"
 import useWindowSizeWithDebounce from "@/hooks/useWindowSize"
 import PersonCardList from "../PersonCardList/PersonCardList"
+import { useMemo } from "react"
 
 const PeopleList = ({ data }: { data: PeopleModelRequest }) => {
   const [value, setValue] = useLocalStorage("listViewType", "grid")
@@ -14,11 +15,21 @@ const PeopleList = ({ data }: { data: PeopleModelRequest }) => {
   const isMobile = width < 768
   const isList = value === "list"
 
-  const PersonCardComponent = isList ? PersonCardList : PersonCard
+  const PersonCardComponent = useMemo(
+    () => (isList ? PersonCardList : PersonCard),
+    [isList]
+  )
 
   const setViewType = (view: string) => {
     setValue(view)
   }
+
+  const memoizedPeopleList = useMemo(() => {
+    const Component = isMobile ? PersonCard : PersonCardComponent
+    return data.map((person, key) => {
+      return <Component key={key} {...person} />
+    })
+  }, [isMobile, data, PersonCardComponent])
 
   return (
     <>
@@ -36,9 +47,7 @@ const PeopleList = ({ data }: { data: PeopleModelRequest }) => {
           })}
           aria-label="peope-list"
         >
-          {data.map((person, key) => {
-            return <PersonCardComponent key={key} {...person} />
-          })}
+          {memoizedPeopleList}
         </div>
       )}
 
@@ -47,9 +56,7 @@ const PeopleList = ({ data }: { data: PeopleModelRequest }) => {
           className="flex w-full min-w-full flex-nowrap gap-3 overflow-x-auto"
           aria-label="peope-list"
         >
-          {data.map((person, key) => {
-            return <PersonCard key={key} {...person} />
-          })}
+          {memoizedPeopleList}
         </div>
       )}
     </>
